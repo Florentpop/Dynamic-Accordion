@@ -8,7 +8,7 @@ import SetMealTwoToneIcon from '@mui/icons-material/SetMealTwoTone';
     <AppBar position="static">
      <Toolbar>
       <IconButton size="large" edge="start" color="info" aria-label="logo">
-      <SetMealTwoToneIcon/>
+      <SetMealTwoToneIcon style={{color: "white", width: "30", height: "30"}}/>
       </IconButton>
       <Typography variant="h6" component="div"  color= "white" sx={{flexGrow: 1}}>
         Smart Tuna

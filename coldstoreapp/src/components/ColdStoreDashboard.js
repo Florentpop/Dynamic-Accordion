@@ -1,12 +1,13 @@
 import React from "react";
 import ColdStoreNavbar from './ColdStoreNavbar';
-import ImageBar from "./ImageBar";
+import ColdStoreButton from './ColdStoreButton';
+
 
  function ColdStoreDashboard() {
   return (
     <div>
     <ColdStoreNavbar/>
-    <ImageBar/>
+    <ColdStoreButton/>
     </div>
   )
 }
