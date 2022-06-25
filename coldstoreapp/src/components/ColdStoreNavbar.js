@@ -23,6 +23,7 @@ function ColdStoreNavbar() {
           variant="h6"
           component="div"
           color="white"
+          textAlign="center"
           sx={{ flexGrow: 1 }}
         >
           Smart Tuna
@@ -33,7 +34,7 @@ function ColdStoreNavbar() {
           />
         </IconButton>
         <Stack direction="row" spacing={2}>
-          <Button color="inherit">Login</Button>
+          <Button color="inherit">Kofi</Button>
         </Stack>
       </Toolbar>
     </AppBar>
