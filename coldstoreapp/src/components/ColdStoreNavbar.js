@@ -8,6 +8,7 @@ import {
   Button,
 } from "@mui/material";
 import SetMealTwoToneIcon from "@mui/icons-material/SetMealTwoTone";
+import AccountCircleIcon from '@mui/icons-material/AccountCircle';
 
 function ColdStoreNavbar() {
   return (
@@ -26,6 +27,11 @@ function ColdStoreNavbar() {
         >
           Smart Tuna
         </Typography>
+        <IconButton size="large" edge="start" color="info" aria-label="logo">
+          <AccountCircleIcon
+            style={{ color: "white", width: "30", height: "30" }}
+          />
+        </IconButton>
         <Stack direction="row" spacing={2}>
           <Button color="inherit">Login</Button>
         </Stack>
