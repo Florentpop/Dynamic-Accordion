@@ -1,0 +1,15 @@
+.form-group{
+    padding-left: 20px;
+    padding-bottom: 10px;
+}
+
+#form-group{
+    margin-left: 7rem;
+    width: 100px;
+   
+}
+#snumber {
+    text-align: left !important;
+    padding-left: -50px !important;
+}
+

@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import { Row, Col } from "react-bootstrap";
+import "../css/ShipSide.css";
 
 class ShipSide extends Component {
   constructor(props) {
@@ -22,23 +23,44 @@ class ShipSide extends Component {
   render() {
     return (
       <div className="ship-side">
-        <Row style={{ textAlign: "center", paddingTop: "50px" }}>
+        <Row style={{ paddingTop: "50px" }}>
           <Col>
-            <form onSubmit={this.handleSubmit}>
-              <label id="snumber">
-                Scrow Number 
-                </label><br/>
+            <form>
+              <div className="form-group">
+                <label for="snumber">Scow Number</label>
                 <input
-                  type="text"
-                  value={this.state.value}
-                  onChange={this.handleChange}
+                  type="number"
+                  class="form-control"
+                  id="snumber"
+                  aria-describedby="snumberHelp"
                 />
-              
-              <input type="submit" value="Submit" />
+              </div>
+              <div className="form-group">
+                <label for="taleweight">Tale Weight</label>
+                <input type="number" class="form-control" id="taleweight" />
+              </div>
+              <div className="form-group">
+                <label for="grossweight">Gross Weight</label>
+                <input type="number" class="form-control" id="grossweight" />
+              </div>
+              <div className="form-group">
+                <label for="taleweight">Fish Type</label>
+                <input type="data-toggle" class="form-control" id="fishtype" data-toggle="dropdown"/>
+              </div>
+              <div className="form-group">
+                <label for="coldstore">Cold Store</label>
+                <input type="text" class="form-control" id="coldstore" />
+              </div>
+                 <div className="form-group">
+                 <h4>Net Weight    0000</h4>
+                 </div>
+              <button type="submit" class="btn btn-primary" id="form-group">
+                ADD
+              </button>
             </form>
           </Col>
-          <Col>1</Col>
-          <Col>1</Col>
+          <Col></Col>
+          <Col></Col>
         </Row>
       </div>
     );
