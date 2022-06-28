@@ -1,12 +1,13 @@
 import React, { Component } from "react";
 import { Row, Col } from "react-bootstrap";
 import "../css/ShipSide.css";
+import { DropDownListComponent } from '@syncfusion/ej2-react-dropdowns';
 
 class ShipSide extends Component {
   constructor(props) {
     super(props);
     this.state = { value: "" };
-
+    this.fishData = ["Tuna", "Tilapia", "Herrings", "Salmon "];
     this.handleChange = this.handleChange.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
   }
@@ -19,7 +20,7 @@ class ShipSide extends Component {
     alert("Data was submitted: " + this.state.value);
     event.preventDefault();
   }
-
+ 
   render() {
     return (
       <div className="ship-side">
@@ -43,9 +44,11 @@ class ShipSide extends Component {
                 <label for="grossweight">Gross Weight</label>
                 <input type="number" class="form-control" id="grossweight" />
               </div>
-              <div className="form-group">
-                <label for="taleweight">Fish Type</label>
-                <input type="data-toggle" class="form-control" id="fishtype" data-toggle="dropdown"/>
+              <div className="form-group" >
+                <label for="taleweight">Fish Type</label><br/>
+                <DropDownListComponent id="ddlelement" dataSource={this.fishData} popupHeight="300px" popupWidth="300px" placeholder="Select a fish">
+                
+                </DropDownListComponent>
               </div>
               <div className="form-group">
                 <label for="coldstore">Cold Store</label>
