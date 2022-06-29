@@ -1,13 +1,14 @@
 import React, { Component } from "react";
 import { Row, Col } from "react-bootstrap";
 import "../css/ShipSide.css";
-import { DropDownListComponent } from '@syncfusion/ej2-react-dropdowns';
+import Form from "react-bootstrap/Form";
+
+
 
 class ShipSide extends Component {
   constructor(props) {
     super(props);
     this.state = { value: "" };
-    this.fishData = ["Tuna", "Tilapia", "Herrings", "Salmon "];
     this.handleChange = this.handleChange.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
   }
@@ -26,7 +27,7 @@ class ShipSide extends Component {
       <div className="ship-side">
         <Row style={{ paddingTop: "50px" }}>
           <Col>
-            <form>
+            <form style={{boxShadow: "2px 3px 10px 1px #000", marginLeft: "20px", padding: "15px ", paddingRight: "-18px"}}>
               <div className="form-group">
                 <label for="snumber">Scow Number</label>
                 <input
@@ -45,14 +46,33 @@ class ShipSide extends Component {
                 <input type="number" class="form-control" id="grossweight" />
               </div>
               <div className="form-group" >
-                <label for="taleweight">Fish Type</label><br/>
-                <DropDownListComponent id="ddlelement" dataSource={this.fishData} popupHeight="300px" popupWidth="300px" placeholder="Select a fish">
+              <Form.Label className="quotesFormLabelText" style={{marginBottom: "0"}}>
+             Fish Type
+            </Form.Label>
+            <Form.Select
+              aria-label="Default select example"
+              className="quotesFormsControl"
+            >
+              <option value="Mobile Apps">Tuna</option>
+              <option value="Website">Salmon</option>
+              <option value="Software">Herrings</option>
+              <option value="Other">Other</option>
+            </Form.Select>
                 
-                </DropDownListComponent>
               </div>
               <div className="form-group">
-                <label for="coldstore">Cold Store</label>
-                <input type="text" class="form-control" id="coldstore" />
+              <Form.Label className="quotesFormLabelText" style={{marginBottom: "0"}}>
+              Cold Store
+             </Form.Label>
+             <Form.Select
+               aria-label="Default select example"
+               className="quotesFormsControl"
+             >
+               <option value="Mobile Apps">Main</option>
+               <option value="Website">Sub-Station</option>
+               <option value="Software">West Side</option>
+               <option value="Other">Market</option>
+             </Form.Select>
               </div>
                  <div className="form-group">
                  <h4>Net Weight    0000</h4>
