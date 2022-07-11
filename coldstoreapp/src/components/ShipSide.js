@@ -23,11 +23,16 @@ class ShipSide extends Component {
   }
  
   render() {
+    const data = [
+      { scrow: "0008", type: "Tuna", net: 1080 },
+      { scrow: "0009", type: "Salmon", net: 1140 },
+      { scrow: "0010", type: "Cat Fish", net: 1080},
+    ]
     return (
       <div className="ship-side">
         <Row style={{ paddingTop: "50px" }}>
           <Col>
-            <form style={{boxShadow: "2px 3px 10px 1px #000", marginLeft: "20px", padding: "15px ", paddingRight: "-18px"}}>
+            <form style={{boxShadow: "2px 3px 10px 1px #000", marginLeft: "20px", marginRight: "20px", padding: "15px ", paddingRight: "-18px"}}>
               <div className="form-group">
                 <label for="snumber">Scow Number</label>
                 <input
@@ -82,8 +87,43 @@ class ShipSide extends Component {
               </button>
             </form>
           </Col>
-          <Col></Col>
-          <Col></Col>
+          <Col className="table">
+          <div>
+          <table>
+           <tr>
+           <th>Cold Store1</th>
+           <th></th>
+           <th>3</th>
+           
+           </tr>
+            <tr>
+              <th style={{fontSize: 10}}>Scrow Number</th>
+              <th style={{fontSize: 10}}>Fish Type</th>
+              <th style={{fontSize: 10}}>Net Weight</th>
+            </tr>
+            {data.map((val, key) => {
+              return (
+                <tr key={key}>
+                  <td>{val.scrow}</td>
+                  <td>{val.type}</td>
+                  <td>{val.net}</td>
+                </tr>
+              )
+            })}
+          </table>
+          <button style={{fontSize: 12}} type="submit" class="btn btn-primary" id="form-group">
+                Dispatch
+              </button>
+        </div>
+          
+          </Col>
+          <Col>
+          <form style={{boxShadow: "2px 3px 10px 1px #000",height: "70vh", margin: "20px", padding: "px ", paddingRight: ""}}>
+              <div className="form-group">
+                 <h5 style={{textAlign: "center"}}>Summary</h5>
+                </div>
+            </form>
+          </Col>
         </Row>
       </div>
     );
