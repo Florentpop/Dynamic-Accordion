@@ -32,7 +32,7 @@ class ShipSide extends Component {
       <div className="ship-side">
         <Row style={{ paddingTop: "50px" }}>
           <Col>
-            <form style={{boxShadow: "2px 3px 10px 1px #000", marginLeft: "20px", marginRight: "20px", padding: "15px ", paddingRight: "-18px"}}>
+            <form style={{boxShadow: "2px 3px 10px 1px #000", marginLeft: "20px", margin: "20px", padding: "15px ", paddingRight: "-18px"}}>
               <div className="form-group">
                 <label for="snumber">Scow Number</label>
                 <input
