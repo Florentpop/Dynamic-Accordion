@@ -2,14 +2,15 @@ import React, { Component } from "react";
 import { Row, Col, Button } from "react-bootstrap";
 import "../css/ShipSide.css";
 import Form from "react-bootstrap/Form";
+import { GiDoubleFish } from "react-icons/gi";
 import {
   Accordion,
   AccordionItem,
   AccordionItemHeading,
   AccordionItemButton,
   AccordionItemPanel,
-} from 'react-accessible-accordion';
-import 'react-accessible-accordion/dist/fancy-example.css';
+} from "react-accessible-accordion";
+import "react-accessible-accordion/dist/fancy-example.css";
 
 class ShipSide extends Component {
   constructor(props) {
@@ -35,21 +36,21 @@ class ShipSide extends Component {
       { scrow: "0010", type: "Cat Fish", net: 1080 },
     ];
 
-    
     return (
       <div className="ship-side">
-        <Row style={{ paddingTop: "50px" }}>
+        <Row style={{ paddingTop: "40px" }}>
           <Col>
             <form
               style={{
                 boxShadow: "2px 3px 10px 1px #000",
                 marginLeft: "20px",
-                margin: "20px",
+                margin: "0 20px",
                 padding: "15px ",
-                paddingRight: "-18px",
+                //paddingRight: "-18px",
+                borderRadius: "10px",
               }}
             >
-              <div className="form-group">
+              <div className="form-group" style={{ marginTop: "15px" }}>
                 <label for="snumber">Scow Number</label>
                 <input
                   type="number"
@@ -100,8 +101,10 @@ class ShipSide extends Component {
                   <option value="Other">Market</option>
                 </Form.Select>
               </div>
-              <div className="form-group">
-                <h4>Net Weight 0000</h4>
+              <div className="form-group" style={{ marginTop: "10px" }}>
+                <h5>
+                  Net Weight : <span style={{ color: "red" }}>0000</span>
+                </h5>
               </div>
               <button type="submit" class="btn btn-primary" id="form-group">
                 ADD
@@ -109,115 +112,123 @@ class ShipSide extends Component {
             </form>
           </Col>
           <Col className="collapsible">
-          <Accordion>
-          <AccordionItem>
-              <AccordionItemHeading>
+            <Accordion>
+              <AccordionItem>
+                <AccordionItemHeading>
                   <AccordionItemButton>
-                     COLDSTORE 1  
+                    COLDSTORE 1
+                    <span style={{ float: "right" }}>
+                      3 Scows
+                      <GiDoubleFish
+                        size={25}
+                        color="red"
+                        style={{ margin: "0 10px" }}
+                      />
+                      <b>3300 kg</b>
+                    </span>
                   </AccordionItemButton>
-              </AccordionItemHeading>
-              <AccordionItemPanel>
-           
-              <table>
-        <tr>
-          <th>Scrow No:</th>
-          <th>Fish Type</th>
-          <th>Net Weight</th>
-        </tr>
-        {data.map((val, key) => {
-          return (
-            <tr key={key}>
-              <td>{val.scrow}</td>
-              <td>{val.type}</td>
-              <td>{val.net}</td>
-            </tr>
-          )
-        })}
-      </table>
-      <Button style={{marginLeft: 100, marginTop: 5}}>Dispatch</Button>
-                 
-                  
-              </AccordionItemPanel>
-          </AccordionItem>
-          <AccordionItem>
-              <AccordionItemHeading>
-                  <AccordionItemButton>
-                     COLDSTORE 2
-                  </AccordionItemButton>
-              </AccordionItemHeading>
-              <AccordionItemPanel>
-              <table>
-              <tr>
-                <th>Scrow No:</th>
-                <th>Fish Type</th>
-                <th>Net Weight</th>
-              </tr>
-              {data.map((val, key) => {
-                return (
-                  <tr key={key}>
-                    <td>{val.scrow}</td>
-                    <td>{val.type}</td>
-                    <td>{val.net}</td>
-                  </tr>
-                )
-              })}
-            </table>
-            <Button style={{marginLeft: 100, marginTop: 5}}>Dispatch</Button>
-              </AccordionItemPanel>
-          </AccordionItem>
-          <AccordionItem>
-              <AccordionItemHeading>
-                  <AccordionItemButton>
-                     COLDSTORE 3
-                  </AccordionItemButton>
-              </AccordionItemHeading>
-              <AccordionItemPanel>
-              <table>
-              <tr>
-                <th>Scrow No:</th>
-                <th>Fish Type</th>
-                <th>Net Weight</th>
-              </tr>
-              {data.map((val, key) => {
-                return (
-                  <tr key={key}>
-                    <td>{val.scrow}</td>
-                    <td>{val.type}</td>
-                    <td>{val.net}</td>
-                  </tr>
-                )
-              })}
-            </table>
-            <Button style={{marginLeft: 100, marginTop: 5}}>Dispatch</Button>
-              </AccordionItemPanel>
-          </AccordionItem>
-          <AccordionItem>
-              <AccordionItemHeading>
-                  <AccordionItemButton>
-                     COLDSTORE 4
-                  </AccordionItemButton>
-              </AccordionItemHeading>
-              <AccordionItemPanel>
-              <table>
-              <tr>
-                <th>Scrow No:</th>
-                <th>Fish Type</th>
-                <th>Net Weight</th>
-              </tr>
-              {data.map((val, key) => {
-                return (
-                  <tr key={key}>
-                    <td>{val.scrow}</td>
-                    <td>{val.type}</td>
-                    <td>{val.net}</td>
-                  </tr>
-                )
-              })}
-            </table>
-            <Button style={{marginLeft: 100, marginTop: 5}}>Dispatch</Button>
-              </AccordionItemPanel>
-          </AccordionItem>
-      </Accordion>
+                </AccordionItemHeading>
+                <AccordionItemPanel>
+                  <table>
+                    <tr>
+                      <th>Scrow No:</th>
+                      <th>Fish Type</th>
+                      <th>Net Weight</th>
+                    </tr>
+                    {data.map((val, key) => {
+                      return (
+                        <tr key={key}>
+                          <td>{val.scrow}</td>
+                          <td>{val.type}</td>
+                          <td>{val.net}</td>
+                        </tr>
+                      );
+                    })}
+                  </table>
+                  <Button style={{ marginLeft: 100, marginTop: 5 }}>
+                    Dispatch
+                  </Button>
+                </AccordionItemPanel>
+              </AccordionItem>
+              <AccordionItem>
+                <AccordionItemHeading>
+                  <AccordionItemButton>COLDSTORE 2</AccordionItemButton>
+                </AccordionItemHeading>
+                <AccordionItemPanel>
+                  <table>
+                    <tr>
+                      <th>Scrow No:</th>
+                      <th>Fish Type</th>
+                      <th>Net Weight</th>
+                    </tr>
+                    {data.map((val, key) => {
+                      return (
+                        <tr key={key}>
+                          <td>{val.scrow}</td>
+                          <td>{val.type}</td>
+                          <td>{val.net}</td>
+                        </tr>
+                      );
+                    })}
+                  </table>
+                  <Button style={{ marginLeft: 100, marginTop: 5 }}>
+                    Dispatch
+                  </Button>
+                </AccordionItemPanel>
+              </AccordionItem>
+              <AccordionItem>
+                <AccordionItemHeading>
+                  <AccordionItemButton>COLDSTORE 3</AccordionItemButton>
+                </AccordionItemHeading>
+                <AccordionItemPanel>
+                  <table>
+                    <tr>
+                      <th>Scrow No:</th>
+                      <th>Fish Type</th>
+                      <th>Net Weight</th>
+                    </tr>
+                    {data.map((val, key) => {
+                      return (
+                        <tr key={key}>
+                          <td>{val.scrow}</td>
+                          <td>{val.type}</td>
+                          <td>{val.net}</td>
+                        </tr>
+                      );
+                    })}
+                  </table>
+                  <Button style={{ marginLeft: 100, marginTop: 5 }}>
+                    Dispatch
+                  </Button>
+                </AccordionItemPanel>
+              </AccordionItem>
+              <AccordionItem>
+                <AccordionItemHeading>
+                  <AccordionItemButton>COLDSTORE 4</AccordionItemButton>
+                </AccordionItemHeading>
+                <AccordionItemPanel>
+                  <table>
+                    <tr>
+                      <th>Scrow No:</th>
+                      <th>Fish Type</th>
+                      <th>Net Weight</th>
+                    </tr>
+                    {data.map((val, key) => {
+                      return (
+                        <tr key={key}>
+                          <td>{val.scrow}</td>
+                          <td>{val.type}</td>
+                          <td>{val.net}</td>
+                        </tr>
+                      );
+                    })}
+                  </table>
+                  <Button style={{ marginLeft: 100, marginTop: 5 }}>
+                    Dispatch
+                  </Button>
+                </AccordionItemPanel>
+              </AccordionItem>
+            </Accordion>
           </Col>
           <Col>
             <form
