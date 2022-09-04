@@ -13,6 +13,7 @@ import "react-accessible-accordion/dist/fancy-example.css";
 import ScaleInfo from "./ScaleInfo";
 import ScaleForm from "./ScaleForm";
 import Table from "react-bootstrap/Table";
+import ModalMenu from "./ModalMenu";
 
 class ShipSide extends Component {
   constructor(props) {
@@ -70,31 +71,45 @@ class ShipSide extends Component {
                   </AccordionItemButton>
                 </AccordionItemHeading>
                 <AccordionItemPanel>
-                  <Table size="sm">
-                    <tr>
-                      <th>Scrow:</th>
-                      <th>Gross</th>
-                      <th>Tare</th>
-                      <th>Type</th>
-                      <th>Net</th>
-                    </tr>
-
-                    {this.state.entries.map((item, key) => {
-                      return (
-                        <tr key={key}>
-                          <td>{item.scowNumber}</td>
-                          <td>{item.grossWeight}</td>
-                          <td>{item.tareWeight}</td>
-                          <td>{item.fishType}</td>
-                          <td>{item.netWeight}</td>
-                        </tr>
-                      );
-                    })}
-                  </Table>
-
+                  <table
+                    className="dwr-table"
+                    width="100%"
+                    border="1px"
+                    cellPadding="0"
+                    cellSpacing="0"
+                  >
+                    <thead>
+                      <tr>
+                        <th>No</th>
+                        <th>Scow</th>
+                        <th>Gross</th>
+                        <th>Tare</th>
+                        <th>Type</th>
+                        <th>Net</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      {this.state.entries.map((item, key) => {
+                        return (
+                          <tr key={key}>
+                            <td>1</td>
+                            <td>{item.scowNumber}</td>
+                            <td className="text-muted">{item.grossWeight}</td>
+                            <td className="text-muted">{item.tareWeight}</td>
+                            <td>{item.fishType}</td>
+                            <td>{item.netWeight}</td>
+                          </tr>
+                        );
+                      })}
+                    </tbody>
+                  </table>
+                  {/**
+                
                   <Button style={{ marginLeft: 100, marginTop: 5 }}>
-                    Dispatch
+                  Dispatch
                   </Button>
+                */}
+                  <ModalMenu />
                 </AccordionItemPanel>
               </AccordionItem>
               <AccordionItem>
