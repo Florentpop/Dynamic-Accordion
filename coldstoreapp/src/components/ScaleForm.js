@@ -96,7 +96,7 @@ export class ScaleForm extends Component {
             <label for="grossWeight">Gross Weight</label>
             <input
               type="number"
-              class="form-control"
+              className="form-control"
               id="grossWeight"
               name="grossWeight"
               value={this.state.grossWeight}
@@ -120,7 +120,7 @@ export class ScaleForm extends Component {
                   value={this.state.fishType}
                   onChange={this.handleChange}
                 >
-                  <option> - - - Select Tuna Specie - - - </option>
+                  <option> - Tuna Specie - </option>
                   <option value="SK 1&2">SK 1.2</option>
                   <option value="SK 3">SK 3</option>
                   <option value="YF 1&2">YF 1.2</option>
@@ -148,7 +148,7 @@ export class ScaleForm extends Component {
                   value={this.state.coldStore}
                   onChange={this.handleChange}
                 >
-                  <option>- - - Select ColdStore - - - </option>
+                  <option>- Select ColdStore - </option>
                   <option value="MOVELLE">MOVELLE</option>
                   <option value="COSMO">COSMO</option>
                   <option value="PFC">PFC</option>
@@ -166,7 +166,7 @@ export class ScaleForm extends Component {
               </span>
             </h5>
           </div>
-          <button type="submit" class="btn btn-primary" id="form-group">
+          <button type="submit" className="btn btn-primary" id="form-group">
             ADD
           </button>
         </Form>

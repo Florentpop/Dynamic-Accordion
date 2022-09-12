@@ -14,7 +14,7 @@ import ScaleInfo from "./ScaleInfo";
 import ScaleForm from "./ScaleForm";
 import Table from "react-bootstrap/Table";
 
-const dummy_data = [
+const data = [
   {
     coldStore: "MOVELLE",
     scowNumber: "W345",
@@ -35,38 +35,32 @@ const dummy_data = [
   },
 ];
 
-const ShipSide = () => {
-  const [scale, setScale] = useState(dummy_data);
+const shipSideData = () => {
+  const [entrie, setEntrie] = useState(data);
 
   const addNewEntry = (newEntry) => {
-    setScale({
-      dummy_data: [...scale, newEntry],
+    setEntrie({
+      data: [...entrie, newEntry],
     });
   };
 
   const categories = {};
-  for (const item of scale) {
+  for (const item of entrie) {
     if (item.coldStore in categories) {
       categories[item.coldStore].push(item);
     } else {
       categories[item.coldStore] = [item];
     }
   }
-  console.log(categories);
 
   return (
-    <div className="ship-side">
+    <div>
       <Row style={{ paddingTop: "40px" }}>
         <Col>
           <ScaleForm addEntry={addNewEntry} />
         </Col>
 
         {/* Accordion */}
-
-        {/** I would like them to be categorized by "coldStore" and have them in react-bootstrap accordion.
-        
-             What I would like to have is for each category ("coldStore") to have only one accordion item.
-        */}
 
         <Col className="collapsible">
           <Accordion>
@@ -79,7 +73,7 @@ const ShipSide = () => {
                   <Accordion.Header>{category}</Accordion.Header>
                   <Accordion.Body>
                     {itemList.map((item) => (
-                      <span>{item.scowNumber} </span>
+                      <span key={item.id}>{item.scowNumber} </span>
                     ))}
                   </Accordion.Body>
                 </Accordion.Item>
@@ -108,4 +102,5 @@ const ShipSide = () => {
     </div>
   );
 };
-export default ShipSide;
+
+export default shipSideData;
